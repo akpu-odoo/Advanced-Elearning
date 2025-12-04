@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="course_main" inherit_id="website_slides.course_main">
+            <xpath expr="//ul[@id='profile_extra_info_tablist']" position="inside">
+                <li t-if="eval_survey_data and len(eval_survey_data)" class="nav-item">
+                    <a class="nav-link"
+                        id="evaluation-tab"
+                        data-bs-toggle="pill"
+                        href="#evaluation"
+                        role="tab"
+                        aria-controls="evaluation"
+                        aria-selected="false">
+                        <i class="fa fa-chart-bar" /> Evaluation Survey </a>
+                </li>
+            </xpath>
+            <xpath expr="//div[@id='courseMainTabContent']" position="inside">
+                <div t-if="eval_survey_data and len(eval_survey_data)"
+                    class="tab-pane fade"
+                    id="evaluation"
+                    role="tabpanel"
+                    aria-labelledby="evaluation-tab">
+                    <h3 class="mb-4">Course Evaluation</h3>
+                    <div class="row g-4">
+                        <t t-foreach="eval_survey_data" t-as="ev">
+                            <div class="col-10 col-sm-6 col-lg-4">
+
+                                <div class="card shadow-sm border-0 h-100"
+                                    style="border-radius: 16px;">
+                                    <div class="card-body px-4 py-4">
+
+                                        <h2 class="fw-bold mb-3 text-center"
+                                            style="font-size: 2rem; color:#5A3E85;">
+                                            <t t-esc="ev['average']" />
+                                        </h2>
+
+                                        <hr class="my-3" />
+
+                                        <p class="mb-3 text-center"
+                                            style="font-size: .8rem; color:#4b4b4b;">
+                                            <t t-esc="ev['question']" />
+                                        </p>
+
+                                        <p class="text-muted text-center mb-0"
+                                            style="font-size: 0.8rem;">
+                                            <i class="fa fa-users me-1"></i>
+                                       <strong>
+                                                <t t-esc="ev['participants']" />
+                                            </strong>
+                                            participants </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

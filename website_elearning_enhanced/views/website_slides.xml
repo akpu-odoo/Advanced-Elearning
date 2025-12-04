@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="slide_access_popup" inherit_id="portal.portal_layout">
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <t t-if="show_popup">
+                <div class="o_main d-flex justify-content-center align-items-center h-full">
+                    <div class="modal fade show d-block" style="background: rgba(0,0,0,0.6);">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning text-dark">
+                                    <h5 class="modal-title"> Access Restricted </h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>You must complete all previous lessons before accessing this
+                                        one.</p>
+                                </div>
+                                <div class="modal-footer justify-content-end">
+                                    <button onclick="history.back()" class="btn btn-primary"> Go
+                                        Back to Course </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

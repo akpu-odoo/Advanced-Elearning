@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="website.slides.fullscreen.eval_survey">
+        <div class="justify-content-center align-self-center text-center">
+            <div
+                t-if="widget._slideValue.category === 'eval_survey' &amp;&amp; !widget._slideValue.completed"
+                class="">
+                <a class="btn btn-primary"
+                    t-att-href="'/slides_survey/slide/get_certification_url?slide_id=' + widget._slideValue.id"
+                    target="_blank">
+                    <i class="fa fa-graduation-cap" />
+                    <span t-if="widget._slideValue.isMember"> Start Survey</span>
+                </a>
+            </div>
+            <div
+                t-if="widget._slideValue.category === 'eval_survey' &amp;&amp; widget._slideValue.completed">
+                <h4 class="mb-3 text-white">You already have completed this survey</h4>
+                <a class="btn btn-primary"
+                    t-att-href="'/slides_survey/slide/get_certification_url?slide_id=' + widget._slideValue.id"
+                    target="_blank">
+                    <i class="fa fa-graduation-cap" />
+                    <span t-if="widget._slideValue.isMember"> View Survey</span>
+                </a>
+            </div>
+        </div>
+    </t>
+</templates>

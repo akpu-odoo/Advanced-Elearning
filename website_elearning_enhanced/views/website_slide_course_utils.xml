@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="slide_sidebar_done_button" inherit_id="website_slides.slide_sidebar_done_button">
+
+        <xpath expr="//div[@t-if='is_member']//button" position="attributes">
+            <attribute name="class">o_wslides_button_complete btn d-none btn-sm</attribute>
+        </xpath>
+
+        <xpath expr="//div[@t-if='is_member']//button" position="before">
+            <button class="btn btn-sm border-0"
+                disabled="1"
+                t-if="slide_completed and slide.can_self_mark_uncompleted or not slide_completed and slide.can_self_mark_completed">
+                <i t-if="slide_completed"
+                    class="o_wslides_slide_completed fa fa-check-circle fa-fw text-success fa-lg"
+                    t-att-data-slide-id="slide.id" title="Mark as not done" />
+                <i t-else="" t-attf-class="fa #{uncompleted_icon} fa-fw fa-lg"
+                    t-att-data-slide-id="slide.id" title="Mark as done" />
+            </button>
+        </xpath>
+    </template>
+</odoo>

@@ -24,4 +24,12 @@
             </div>
         </div>
     </t>
+
+    <t t-name="website.slides.sidebar.done.button" t-inherit="website.slides.sidebar.done.button"
+        t-inherit-mode="extension">
+        <xpath expr="//div[@class='o_wslides_sidebar_done_button']//button" position="attributes">
+            <attribute name="disabled">1</attribute>
+            <attribute name="style">border: none;</attribute>
+        </xpath>
+    </t>
 </templates>

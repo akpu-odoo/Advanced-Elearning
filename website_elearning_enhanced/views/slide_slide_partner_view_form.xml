@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="slide_slide_partner_view_form" model="ir.ui.view">
+        <field name="name">slide.slide.partner.view.form</field>
+        <field name="model">slide.slide.partner</field>
+        <field name="inherit_id" ref="website_slides.slide_slide_partner_view_form" />
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='completed']" position="after">
+
+                <field name="status" readonly="1" />
+                <field name="max_progress" readonly="1" />
+                <field name="completion_timestamp" readonly="1" />
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -24,11 +24,12 @@ Key Features:
         "views/slide_slide_view.xml",
         "views/survey_survey_view.xml",
         "views/website_slide_course_template.xml",
+        "views/website_slide_course_utils.xml",
+        "views/slide_slide_partner_view_form.xml",
     ],
     "assets": {
         "web.assets_frontend": [
-            "website_elearning_enhanced/static/src/js/slide_course_fullscreen.js",
-            "website_elearning_enhanced/static/src/xml/website_slides_fullscreen.xml",
+            "website_elearning_enhanced/static/src/**/*",
         ],
     },
     "installable": True,
